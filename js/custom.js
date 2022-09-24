@@ -51,9 +51,11 @@ $(function(){
       const designObj = JSON.parse(window.localStorage.getItem("design"))
       itemLabel.classList.add(designObj.design)
       if(designObj.design === 'yeti') {
-        itemLabel.classList.remove('rockspirit')
+        itemLabel.classList.remove('rockspirit pinkbean')
+      } else if(designObj.design === 'rockspirit') {
+        itemLabel.classList.remove('yeti pinkbean')
       } else {
-        itemLabel.classList.remove('yeti')
+        itemLabel.classList.remove('yeti rockspirit')
       }
     }
   })
