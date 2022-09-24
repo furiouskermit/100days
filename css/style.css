@@ -58,11 +58,17 @@ input[type=checkbox], input[type=radio] {
 .rockspirit {
   background-image: url("../img/uncheck2.png");
 }
+.pinkbean {
+  background-image: url("../img/uncheck3.png");
+}
 .checked.yeti {
   background-image: url("../img/check1.png");
 }
 .checked.rockspirit {
   background-image: url("../img/check2.png");
+}
+.checked.pinkbean {
+  background-image: url("../img/check3.png");
 }
 
 /* layout */

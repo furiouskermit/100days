@@ -93,9 +93,11 @@ $(function(){
     listItem.forEach(element => {
       element.children[1].classList.add(thisFor)
       if(thisFor === 'yeti') {
-        element.children[1].classList.remove('rockspirit')
+        element.children[1].classList.remove('rockspirit pinkbean')
+      } else if(thisFor === 'rockspirit') {
+        element.children[1].classList.remove('yeti pinkbean')
       } else {
-        element.children[1].classList.remove('yeti')
+        element.children[1].classList.remove('yeti rockspirit')
       }
     })
     window.localStorage.setItem("design", JSON.stringify(designObj))
