@@ -4,7 +4,7 @@ $(function(){
     $(".challenge-list").append(
       `<li class='challenge-item'>
         <input type='checkbox' name='challengeList' class='challenge-checkbox' id='challenge${i+1}'>
-        <label class='challenge-label yeti' for='challenge${i+1}'></label>
+        <label class='challenge-label default' for='challenge${i+1}'></label>
       </li>`
     )
   }
@@ -49,14 +49,16 @@ $(function(){
     }
     if(window.localStorage.getItem("design") !== null) {
       const designObj = JSON.parse(window.localStorage.getItem("design"))
-      itemLabel.classList.add(designObj.design)
-      if(designObj.design === 'yeti') {
-        itemLabel.classList.remove('rockspirit pinkbean')
-      } else if(designObj.design === 'rockspirit') {
-        itemLabel.classList.remove('yeti pinkbean')
-      } else {
-        itemLabel.classList.remove('yeti rockspirit')
-      }
+
+      const itemClassList = itemLabel.classList
+      itemClassList.replace(itemClassList[1], designObj.design)
+      // if(designObj.design === 'yeti') {
+      //   itemLabel.classList.remove('rockspirit pinkbean')
+      // } else if(designObj.design === 'rockspirit') {
+      //   itemLabel.classList.remove('yeti pinkbean')
+      // } else {
+      //   itemLabel.classList.remove('yeti rockspirit')
+      // }
     }
   })
 
@@ -93,14 +95,15 @@ $(function(){
       "design": thisFor
     }
     listItem.forEach(element => {
-      element.children[1].classList.add(thisFor)
-      if(thisFor === 'yeti') {
-        element.children[1].classList.remove('rockspirit pinkbean')
-      } else if(thisFor === 'rockspirit') {
-        element.children[1].classList.remove('yeti pinkbean')
-      } else {
-        element.children[1].classList.remove('yeti rockspirit')
-      }
+      const itemClassList = element.children[1].classList
+      itemClassList.replace(itemClassList[1], designObj.design)
+      // if(thisFor === 'yeti') {
+      //   element.children[1].classList.remove('rockspirit pinkbean')
+      // } else if(thisFor === 'rockspirit') {
+      //   element.children[1].classList.remove('yeti pinkbean')
+      // } else {
+      //   element.children[1].classList.remove('yeti rockspirit')
+      // }
     })
     window.localStorage.setItem("design", JSON.stringify(designObj))
   }
