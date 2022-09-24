@@ -1,0 +1,186 @@
+/* ### Default CSS ### */
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Pretendard Variable';
+  letter-spacing: -0.9px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  color: #121212;
+}
+a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #121212;
+}
+
+/* ### RESET CSS ### */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+input, select, textarea, button, span, a, label, strong, em, strike {
+  display: inline-block;
+}
+input, select, textarea, button {
+  outline: none;
+}
+
+/* ### Custom CSS ### */
+/* Common */
+input[type=checkbox], input[type=radio] {
+  display: none;
+}
+[class *= "-wrap"] {
+  position: relative;
+  z-index: 1;
+}
+[class *= "-title"] {
+  font-family: 'NEXON Lv1 Gothic OTF';
+}
+[class *= "-label"] {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.yeti {
+  background-image: url("../img/uncheck1.png");
+}
+.rockspirit {
+  background-image: url("../img/uncheck2.png");
+}
+.checked.yeti {
+  background-image: url("../img/check1.png");
+}
+.checked.rockspirit {
+  background-image: url("../img/check2.png");
+}
+
+/* layout */
+.container {
+  height: 100vh;
+  padding: 30px 0;
+  background: url("../img/bg.png") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+.inner {
+  width: 500px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.inner:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.7px);
+  -webkit-backdrop-filter: blur(3.7px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+/* --- 타이틀 & 목표 입력 Start --- */
+.challenge-title-wrap {
+  padding: 0 0 25px;
+}
+.challenge-title {
+  padding: 0 0 20px;
+  letter-spacing: -1px;
+  text-align: center;
+  font-family: 'NEXON Lv1 Gothic OTF';
+  font-weight: bold;
+}
+
+/* 목표 입력 */
+.challenge-object-form {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+.challenge-control {
+  height: 45px;
+  line-height: 45px;
+  border-radius: 5px;
+  border: none;
+}
+#chObj {
+  flex: 5;
+  padding: 10px 12px;
+  border: 1px solid #dedede;
+}
+#btnEdit, #btnSubmit {
+  flex: 1;
+  color: #fff;
+  cursor: pointer;
+}
+#btnEdit {
+  background: #ccc;
+}
+#btnSubmit {
+  background: #7DD2F3;
+}
+/* --- 타이틀 & 목표 입력 End --- */
+
+/* checkbox 리스트 */
+.challenge-list {
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+  gap: 10px 0;
+}
+.challenge-label {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+/* 아이콘 모양 선택 */
+.challenge-design-wrap {
+  position: fixed;
+  top: 50%;
+  right: calc(calc(100% - 500px) / 2);
+  transform: translateY(-50%) translateX(calc(100% + 20px));
+  padding: 20px;
+  background: #fff;
+  border-radius: 20px;
+  text-align: center;
+}
+.challenge-design-title {
+  padding: 0 0 15px;
+  font-weight: normal;
+  font-size: 15px;
+}
+.challenge-design-item {
+  display: inline-block;
+}
+.challenge-design-item:not(:last-child) {
+  margin-right: 10px;
+}
+.challenge-design-label {
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+  border: 1px solid #f3f2f1;
+  border-radius: 50%;
+  background-size: 75%;
+}

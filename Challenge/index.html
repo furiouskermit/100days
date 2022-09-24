@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Days Challenge</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="inner">
+        <div class="challenge-title-wrap">
+          <h1 class="challenge-title">100 Days Challenge</h1>
+          <div class="challenge-object">
+            <form class="challenge-object-form">
+              <input type="text" class="challenge-control" id="chObj" placeholder="100일 챌린지 목표" maxlength="50">
+              <!-- <button type="button" class="challenge-control" id="btnEdit">수정</button> -->
+              <input type="submit" class="challenge-control" value="등록" id="btnSubmit">
+            </form>
+          </div>
+        </div>
+        <div class="challenge-list-wrap">
+          <form class="challenge-list-form"><ul class="challenge-list"></ul></form>
+        </div>
+        <div class="challenge-design-wrap">
+          <h3 class="challenge-design-title">아이콘 모양 선택</h3>
+          <ul class="challenge-design-list">
+            <li class="challenge-design-item">
+              <input type="radio" class="challenge-radio" name="challengeDesign" id="yeti">
+              <label for="yeti" class="challenge-design-label yeti"></label>
+            </li>
+            <li class="challenge-design-item">
+              <input type="radio" class="challenge-radio" name="challengeDesign" id="rockspirit">
+              <label for="rockspirit" class="challenge-design-label rockspirit"></label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <script src="js/custom.js"></script>
+  </body>
+</html>
