@@ -194,4 +194,119 @@ input[type=checkbox], input[type=radio] {
   border: 1px solid #f3f2f1;
   border-radius: 50%;
   background-size: 75%;
+  filter: grayscale(1);
+}
+.challenge-design-label.checked {
+  filter: grayscale(0);
+}
+.challenge-design-label.yeti.checked {
+  background-color: #dedede;
+}
+.challenge-design-label.rockspirit.checked {
+  background-color: #eefffe;
+}
+.challenge-design-label.pinkbean.checked {
+  background-color: #ffc4dd;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  /* layout */
+  .container {
+    padding: 30px 50px;
+  }
+  .inner {
+    width: 80%;
+    height: 100%;
+    margin: 0;
+  }
+
+  /* checkbox 리스트 */
+  .challenge-list-wrap {
+    height: calc(100% - 125px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .challenge-list {
+    grid-gap: 20px 0;
+  }
+  .challenge-label {
+    width: 53px;
+    height: 53px;
+  }
+
+  /* 아이콘 모양 선택 */
+  .challenge-design-wrap {
+    right: 50px;
+    transform: translateX(0px) translateY(-50%);
+    padding: 40px 20px;
+  }
+  .challenge-design-title {
+    font-size: 17px;
+  }
+  .challenge-design-item {
+    display: block;
+  }
+  .challenge-design-item:not(:last-child) {
+    margin: 0 0 10px;
+  }
+  .challenge-design-label {
+    width: 65px;
+    height: 65px;
+  }
+}
+@media (max-width: 1023.98px) {
+  /* layout */
+  .container {
+    background-image: url("../img/bg-mobile.png");
+    padding: 14px;
+  }
+  .inner {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* checkbox 리스트 */
+  .challenge-list-wrap {
+    height: calc(100% - calc(125px + 108px));
+    padding: 0 0 20px;
+  }
+  .challenge-list {
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 13px 0;
+  }
+  .challenge-label {
+    width: 47px;
+    height: 47px;
+  }
+
+  /* 아이콘 모양 선택 */
+  .challenge-design-wrap {
+    right: 50px;
+    transform: translateX(0px) translateY(-50%);
+    padding: 40px 20px;
+  
+    position: static;
+    top: 0;
+    right: 0;
+    transform: translate(0px, 0px);
+    padding: 20px 0 0;
+    background-color: transparent;
+    border-top: 1px solid #e5e5e5;
+    border-radius: 0px;
+  }
+  .challenge-design-title {
+    padding: 0 0 10px;
+    font-size: 16px;
+  }
+  .challenge-design-item {
+    display: inline-block;
+  }
+  .challenge-design-item:not(:last-child) {
+    margin: 0 12px 0 0;
+  }
+  .challenge-design-label {
+    width: 55px;
+    height: 55px;
+  }
 }

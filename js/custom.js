@@ -9,7 +9,7 @@ $(function(){
     )
   }
 
-  //목표
+  /* ### 목표 Start ### */
   const objectText = document.getElementById("chObj")
   function submitText() {
     event.preventDefault()
@@ -22,14 +22,16 @@ $(function(){
 
   document.getElementById("btnSubmit").addEventListener("click", submitText)
 
-
   window.localStorage.getItem("text")
   if(window.localStorage.getItem("text") !== null) {
     const textObj = JSON.parse(window.localStorage.getItem("text"))
     objectText.value = textObj.text
   }
+  /* ### 목표 End ### */
 
   const listItem = document.querySelectorAll(".challenge-item")
+  const designItem = document.querySelectorAll(".challenge-design-item")
+  
   listItem.forEach((element) => {
     const itemChildren = element.children[0]
     const itemLabel = element.children[1]
@@ -55,7 +57,6 @@ $(function(){
     }
   })
 
-
   function checkEvent() {
     const itemId = this.getAttribute("id")
     const itemProp = this.checked
@@ -73,17 +74,26 @@ $(function(){
     window.localStorage.setItem(itemId, JSON.stringify(itemObj))
   }
 
-  const designItem = document.querySelectorAll(".challenge-design-item")
   designItem.forEach((element) => {
     const thisRadio = element.children[0]
     const thisLabel = element.children[1]
-  
+
+    const thisLabelClass = thisLabel.classList
+    const labelClass = document.querySelector(".challenge-label").classList[1]
+    if(thisLabelClass[1] === labelClass) {
+      thisLabelClass.add("checked")
+    }
+   
     thisRadio.addEventListener("change", selectDesign)
+
+    window.localStorage.getItem("design")
+    
   })
 
   //클릭하면 클래스리스트 저장
   function selectDesign() {
-    const thisFor = this.nextElementSibling.htmlFor;
+    const thisLabel = this.nextElementSibling
+    const thisFor = thisLabel.htmlFor
     const designObj = {
       "design": thisFor
     }
@@ -93,6 +103,11 @@ $(function(){
     })
     window.localStorage.setItem("design", JSON.stringify(designObj))
   }
+
+  $(".challenge-radio").click(function(){
+    $(this).siblings().addClass("checked")
+    $(this).parents(".challenge-design-item").siblings().find(".challenge-design-label").removeClass("checked")
+  })
 
 })
 
