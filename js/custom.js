@@ -52,13 +52,6 @@ $(function(){
 
       const itemClassList = itemLabel.classList
       itemClassList.replace(itemClassList[1], designObj.design)
-      // if(designObj.design === 'yeti') {
-      //   itemLabel.classList.remove('rockspirit pinkbean')
-      // } else if(designObj.design === 'rockspirit') {
-      //   itemLabel.classList.remove('yeti pinkbean')
-      // } else {
-      //   itemLabel.classList.remove('yeti rockspirit')
-      // }
     }
   })
 
@@ -97,13 +90,6 @@ $(function(){
     listItem.forEach(element => {
       const itemClassList = element.children[1].classList
       itemClassList.replace(itemClassList[1], designObj.design)
-      // if(thisFor === 'yeti') {
-      //   element.children[1].classList.remove('rockspirit pinkbean')
-      // } else if(thisFor === 'rockspirit') {
-      //   element.children[1].classList.remove('yeti pinkbean')
-      // } else {
-      //   element.children[1].classList.remove('yeti rockspirit')
-      // }
     })
     window.localStorage.setItem("design", JSON.stringify(designObj))
   }

@@ -134,6 +134,11 @@ input[type=checkbox], input[type=radio] {
   flex: 5;
   padding: 10px 12px;
   border: 1px solid #dedede;
+  font-weight: 500;
+}
+#chObj::placeholder {
+  font-weight: 400;
+  color: #dedede;
 }
 #btnEdit, #btnSubmit {
   flex: 1;
