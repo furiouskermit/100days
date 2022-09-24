@@ -4,7 +4,7 @@ $(function(){
     $(".challenge-list").append(
       `<li class='challenge-item'>
         <input type='checkbox' name='challengeList' class='challenge-checkbox' id='challenge${i+1}'>
-        <label class='challenge-label default' for='challenge${i+1}'></label>
+        <label class='challenge-label yeti' for='challenge${i+1}'></label>
       </li>`
     )
   }
